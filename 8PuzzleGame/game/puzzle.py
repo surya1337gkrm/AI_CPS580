@@ -19,7 +19,7 @@ class Puzzle:
         self.black = (0, 0, 0)
         self.white = (255, 255, 255)
 
-        self.dist = 200
+        self.dist = 200 
 
         pygame.init()
         pygame.font.init()

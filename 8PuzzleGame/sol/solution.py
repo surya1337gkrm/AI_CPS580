@@ -51,6 +51,12 @@ def getChild(ele,child):
     childNode.children=childEle[childNode.puzzle.index(8)]   
     return childNode 
 
+def heuristic(puzzle):
+    h=0
+    for i in puzzle:
+        h+=abs(puzzle.index(i)-goalState.index(i))
+    return h
+
 
 def bfs(puzzle):
     start=time.time()
@@ -122,3 +128,35 @@ def dfs(puzzle):
                         list=backtracing(childNode)
                         return list
 
+def astar(puzzle):
+    start=time.time()
+    list = []
+    expanded=[]
+    fringe=PriorityQueue()
+    ele=0
+    init=Node(None,puzzle,0)
+    init.children=childEle[puzzle.index(8)]
+    init.h=heuristic(init.puzzle)
+    init.f=init.cost+init.h
+    fringe.put((init.f,ele,init))
+    ele+=1
+
+    while not fringe.empty():
+        pVal,c,pEle=fringe.get()
+        if goalTesting(pEle):
+            list=backtracing(pEle)
+            print('A*: ',(time.time()-start)*1000,' ms')
+            return list
+
+        expanded.append(pEle.puzzle)
+        paths=pEle.children
+
+        for child in paths :
+            childNode=getChild(pEle,child)
+
+            childNode.h=heuristic(childNode.puzzle)
+            childNode.f=childNode.cost + childNode.h
+
+            if childNode.puzzle not in expanded:
+                fringe.put((childNode.f,ele,childNode))
+                ele+=1             

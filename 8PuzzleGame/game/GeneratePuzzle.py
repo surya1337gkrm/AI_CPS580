@@ -27,7 +27,7 @@ class GeneratePuzzle:
             puzzle[new_pos] = temp
 
 
-        return puzzle
+        return [3,2,7,6,1,5,4,8,0]
 
     def draw_puzzle(self, digits):
         counter_x = 1
