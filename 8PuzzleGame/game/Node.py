@@ -4,9 +4,10 @@ import heapq
 import math
 
 class Node:
-    def __init__(self, parent, puzzle, cost):
+    def __init__(self, value, parent, move, cost):
         self.parent = parent
-        self.puzzle = puzzle
+        self.value = value
         self.children = []
+        self.move = move
         self.cost = cost
 

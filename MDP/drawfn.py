@@ -139,6 +139,7 @@ check2=False
 radio1=True
 radio2=False
 def draw():
+    if radio1:
         if check1 and check2:
             screen.fill(pygame.Color(255,255,255),pygame.Rect(0,0,750,570))
             drawX()
@@ -156,3 +157,10 @@ def draw():
         else:
             screen.fill(pygame.Color(255,255,255),pygame.Rect(0,0,750,570))
             drawGrid()
+    else:
+        if check2:
+            screen.fill(pygame.Color(255,255,255),pygame.Rect(0,0,750,570))
+            screen.blit(unchecked if not check2 else checked, (820,200))
+            drawPolicy2()
+            drawGrid()
+        

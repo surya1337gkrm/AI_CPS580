@@ -93,7 +93,7 @@ def main():
                 if 850<=pos[0]<=925 and 350<=pos[1]<=385:
                     print('Play')
                     if drawfn.radio1 and not drawfn.radio2:
-                        while idx<=100:
+                        while idx<100:
                             b=onGo(idx)
                             drawfn.draw()
                             pygame.time.delay(100)

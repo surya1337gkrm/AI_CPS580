@@ -160,7 +160,6 @@ def draw():
     else:
         if check2:
             screen.fill(pygame.Color(255,255,255),pygame.Rect(0,0,750,570))
-            screen.blit(unchecked,(820,150))
             screen.blit(unchecked if not check2 else checked, (820,200))
             drawPolicy2()
             drawGrid()

@@ -89,8 +89,8 @@ class Puzzle:
                         self.generate_puzzle.draw_puzzle_animate(self.puzzle_numbers,index1,index2,"Down")
                         if (self.puzzle_numbers == [0, 1, 2, 3, 4, 5, 6, 7, 8]):
                             self.you_win = True
-                        else:
-                            self.you_win = False
+                        else: 
+                            self.you_win = False 
 
                     if (event.key == pygame.K_UP or event.key == pygame.K_w):
                         # print "*** UP ***"
@@ -161,7 +161,7 @@ class Puzzle:
                                 if (self.puzzle_numbers[j] == 8):
                                     pos_eight = j
 
-                            temp = self.puzzle_numbers[pos_eight]
+                            temp = self.puzzle_numbers[pos_eight] 
                             self.puzzle_numbers[pos_eight] = self.puzzle_numbers[a]
                             self.puzzle_numbers[a] = temp
 
